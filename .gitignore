@@ -1,4 +1,4 @@
 /node_modules
-/server/twitterKeys.js
+/server/apiKeys.js
 /server/npm-debug.log
 npm-debug.log

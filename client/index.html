@@ -21,14 +21,14 @@
     <img id="logo" src="http://iconbug.com/data/03/256/be77a841fef565ae9e1c64c4923d11f1.png">
 </div>
 
-<div id="instructions">~ enter a twitter handle below to see their most recent tweets ~</div>
+<div id="instructions">~ enter a BEER/BREWERY and LOCATION below to see who's tweeting! ~</div>
 
 <div ng-controller="TwitterController">
-    <form id="input-form" class="form-horizontal" ng-submit="getUserTweets(userHandle)" method="post">
-        <input type="text" ng-model="userHandle" placeholder="enter @userhandle here">
+    <form id="input-form" class="form-horizontal" ng-submit="getTweets(keyword)" method="post">
+        <input type="text" ng-model="keyword" placeholder="ex: Lagunitas IPA">
+        <input type="text" ng-model="location" placeholder="ex: Los Angeles, CA">
         <button class="btn" type="submit"><i class="icon-search"></i>Search</button>
         <input type="text" ng-model="filter" placeholder="filter by #hashtag">
-        
     </form>
     <table class="table table-striped">
         <tr ng-animate="animate" ng-repeat="tweet in tweets | filter:filter">
