@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="beerFinder">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<script src="./controller.js"></script>
+
+
+
+<body>
+<div id="title">BEER FINDER</div>
+
+<div id="container">
+    <img id="logo" src="http://iconbug.com/data/03/256/be77a841fef565ae9e1c64c4923d11f1.png">
+</div>
+
+<div id="instructions">~ enter a twitter handle below to see their most recent tweets ~</div>
+
+<div ng-controller="TwitterController">
+    <form id="input-form" class="form-horizontal" ng-submit="getUserTweets(userHandle)" method="post">
+        <input type="text" ng-model="userHandle" placeholder="enter @userhandle here">
+        <button class="btn" type="submit"><i class="icon-search"></i>Search</button>
+        <input type="text" ng-model="filter" placeholder="filter by #hashtag">
+        
+    </form>
+    <table class="table table-striped">
+        <tr ng-animate="animate" ng-repeat="tweet in tweets | filter:filter">
+            <td id="screen_name">@{{tweet.user.screen_name}}</td>
+            <td id="tweet_text">{{tweet.text}}</td>
+            <td id="created_at">{{tweet.created_at}}</td>
+        </tr>
+    </table>
+</div>
+<div id="container2">
+    <img id="logo" src="http://stacysrandomthoughts.com/http://stacysrandomthoughts.com/wp-content/2012/07/TwitterBird.gif">
+</div>
+</div>
+</body>
+</html>
