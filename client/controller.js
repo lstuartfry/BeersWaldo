@@ -1,9 +1,12 @@
-var app = angular.module('beerFinder', []);
+var app = angular.module('beerFinder', ['ngSanitize']);
 
 app.controller('TwitterController', function($scope, $http, Tweets){
   $scope.getTweets = function(keyword, location) {
     Tweets.getAll(keyword, location)
     .then(function(data) {
+      if(data.data.statuses.length === 0) {
+        alert('sorry, no tweets found!  Please try another search!');
+      }
       $scope.tweets = data.data.statuses;
     })
   }

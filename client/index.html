@@ -1,11 +1,9 @@
 <!doctype html>
 <html ng-app="beerFinder">
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">
-</script>
-
-
-<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-sanitize.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
@@ -13,8 +11,6 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 
 <script src="./controller.js"></script>
-
-
 
 <body>
 <div id="title">BEER FINDER</div>
@@ -35,7 +31,7 @@
     <table class="table table-striped">
         <tr ng-animate="animate" ng-repeat="tweet in tweets | filter:filter">
             <td id="screen_name">@{{tweet.user.screen_name}}</td>
-            <td id="tweet_text">{{tweet.text}}</td>
+            <td id="tweet_text" ng-bind-html="tweet.text | linky">{{tweet.text}}</td>
             <td id="created_at">{{tweet.created_at}}</td>
         </tr>
     </table>

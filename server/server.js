@@ -4,7 +4,6 @@ var apiKeys = require('./apiKeys.js');
 var routes = require('./routes');
 var Twit = require('twit');
 var sampleKeys = require('./sampleKeys.js');
-// var request = require('request');
 var axios = require('axios');
 app.use(express.static('./client'));
 
@@ -25,17 +24,18 @@ var googleUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
 var urlKey = '&key=';
 var searchTweets = 'search/tweets';
 var count = 25;
+var search, location, lat, long, geocode;
 
 app.get('/results', function (req, res) {
-  console.log('req.headers is : ', req.headers);
-  var search = req.headers.keyword;
-  var location = req.headers.location.split(' ').join('+');
+  search = req.headers.keyword;
+  location = req.headers.location.split(' ').join('+');
+  
   axios.get(googleUrl + location + urlKey + googleKey)
   .then(function(response) {
-    var lat = response.data.results[0].geometry.location.lat;
-    var lng = response.data.results[0].geometry.location.lng;
-    var geocode = lat + ',' + lng + ',5mi';
-    console.log('geocode is : ', geocode);
+    lat = response.data.results[0].geometry.location.lat;
+    lng = response.data.results[0].geometry.location.lng;
+    geocode = lat + ',' + lng + ',5mi';
+    
     T.get(searchTweets, {q: search, count: count, geocode: geocode}, function(error, data, response){
     })
     .then(function(data) {
