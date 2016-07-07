@@ -1,10 +1,9 @@
 var app = angular.module('beerFinder', []);
 
 app.controller('TwitterController', function($scope, $http, Tweets){
-  $scope.getTweets = function(keyword) {
-    Tweets.getAll(keyword)
+  $scope.getTweets = function(keyword, location) {
+    Tweets.getAll(keyword, location)
     .then(function(data) {
-      console.log(data.data.statuses)
       $scope.tweets = data.data.statuses;
     })
   }
@@ -12,12 +11,13 @@ app.controller('TwitterController', function($scope, $http, Tweets){
 
 app.factory('Tweets', function($http) {
 
-  var getAll = function(keyword) {
+  var getAll = function(keyword, location) {
     return $http({
-      url: '/tweets',
+      url: '/results',
       method: 'GET', 
       headers: {
-        'keyword': keyword
+        'keyword': keyword,
+        'location': location
       }
     })
     .then(function (resp) {

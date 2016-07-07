@@ -4,9 +4,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">
 </script>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+
 
 <link rel="stylesheet" type="text/css" href="styles.css">
 
@@ -24,7 +26,7 @@
 <div id="instructions">~ enter a BEER/BREWERY and LOCATION below to see who's tweeting! ~</div>
 
 <div ng-controller="TwitterController">
-    <form id="input-form" class="form-horizontal" ng-submit="getTweets(keyword)" method="post">
+    <form id="input-form" class="form-horizontal" ng-submit="getTweets(keyword, location)" method="post">
         <input type="text" ng-model="keyword" placeholder="ex: Lagunitas IPA">
         <input type="text" ng-model="location" placeholder="ex: Los Angeles, CA">
         <button class="btn" type="submit"><i class="icon-search"></i>Search</button>
