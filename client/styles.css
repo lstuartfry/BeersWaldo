@@ -8,12 +8,8 @@ input {
 	font-family: Roboto;
 }
 
-#container {
-	float: left;
-}
-
-#container2 {
-	float: right;
+tr {
+   height: 10vh;
 }
 
 #logo {
@@ -21,6 +17,7 @@ input {
 	height: 200px;
 	margin: 20px 20px 20px 20px;
 }
+
 button {
 	background-color: #66CC33;
 	width: 150px;
@@ -69,17 +66,26 @@ button:hover {
     margin-bottom: 30px;
 }
 
+#profile_banner {
+	width: 15vw;
+}
+
 #screen_name {
-	font-family: Helvetica Neue;
-	font-size: 18px;
-	font-weight: bold;
-	color: #FFA500;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-weight: bold;
+    color: firebrick;
+    vertical-align: middle;
+    text-align: center;
+    text-shadow: 1px 1px white;
+    background-color: #ffd900;
+    border-radius: 20px;
 }
 
 #tweet_text {
 	font-family: Helvetica Neue;
 	color: #292f33;
-	font-size: 14px;
+	font-size: 1.5em;
 }
 
 #created_at {

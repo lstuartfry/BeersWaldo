@@ -7,6 +7,7 @@ app.controller('TwitterController', function($scope, $http, Tweets){
       if(data.data.statuses.length === 0) {
         alert('sorry, no tweets found!  Please try another search!');
       }
+      console.log('data.data is :', data.data);
       $scope.tweets = data.data.statuses;
     })
   }

@@ -15,10 +15,6 @@
 <body>
 <div id="title">BEER FINDER</div>
 
-<div id="container">
-    <img id="logo" src="http://iconbug.com/data/03/256/be77a841fef565ae9e1c64c4923d11f1.png">
-</div>
-
 <div id="instructions">~ enter a BEER/BREWERY and LOCATION below to see who's tweeting! ~</div>
 
 <div ng-controller="TwitterController">
@@ -30,14 +26,12 @@
     </form>
     <table class="table table-striped">
         <tr ng-animate="animate" ng-repeat="tweet in tweets | filter:filter">
-            <td id="screen_name">@{{tweet.user.screen_name}}</td>
-            <td id="tweet_text" ng-bind-html="tweet.text | linky">{{tweet.text}}</td>
-            <td id="created_at">{{tweet.created_at}}</td>
+        <!-- <td id="profile_banner" ng-style="{backgroundImage: 'url({{tweet.user.profile_banner_url}})', backgroundSize: 'cover'}"></td> -->
+        <td id="screen_name">@{{tweet.user.screen_name}}</td>
+        <td id="tweet_text" ng-bind-html="tweet.text | linky">{{tweet.text}}</td>
+        <td id="created_at">{{tweet.created_at.slice(0, 19)}}</td>
         </tr>
     </table>
-</div>
-<div id="container2">
-    <img id="logo" src="http://stacysrandomthoughts.com/http://stacysrandomthoughts.com/wp-content/2012/07/TwitterBird.gif">
 </div>
 </div>
 </body>
