@@ -1,4 +1,4 @@
-var app = angular.module('beerFinder', ['ngSanitize']);
+var app = angular.module('beersWaldo', ['ngSanitize']);
 
 app.controller('TwitterController', function($scope, $http, Tweets){
   $scope.getTweets = function(keyword, location) {

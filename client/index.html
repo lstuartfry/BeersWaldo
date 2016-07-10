@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="beerFinder">
+<html ng-app="beersWaldo">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-sanitize.js"></script>
@@ -13,7 +13,7 @@
 <script src="./controller.js"></script>
 
 <body>
-<div id="title">BEER FINDER</div>
+<div id="title">BEERS WALDO?</div>
 
 <div id="instructions">~ enter a BEER/BREWERY and LOCATION below to see who's tweeting! ~</div>
 
@@ -22,7 +22,7 @@
         <input type="text" ng-model="keyword" placeholder="ex: Lagunitas IPA">
         <input type="text" ng-model="location" placeholder="ex: Los Angeles, CA">
         <button class="btn" type="submit"><i class="icon-search"></i>Search</button>
-        <input type="text" ng-model="filter" placeholder="filter by #hashtag">
+        <!-- <input type="text" ng-model="filter" placeholder="filter by #hashtag"> -->
     </form>
     <table class="table table-striped">
         <tr ng-animate="animate" ng-repeat="tweet in tweets | filter:filter">
