@@ -1,5 +1,5 @@
 {
-  "name": "beerfinder",
+  "name": "beerswaldo",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lstuartfry/BeerFinder.git"
+    "url": "git+https://github.com/lstuartfry/BeersWaldo.git"
   },
   "author": "Lukas Stuart-Fry",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lstuartfry/BeerFinder/issues"
+    "url": "https://github.com/lstuartfry/BeersWaldo/issues"
   },
-  "homepage": "https://github.com/lstuartfry/BeerFinder#readme",
+  "homepage": "https://github.com/lstuartfry/BeersWaldo#readme",
   "dependencies": {
     "axios": "^0.12.0",
     "body-parser": "^1.15.2",
