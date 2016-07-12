@@ -47,7 +47,7 @@ body {
 }
 
 #input-form {
-  background-color: black;
+  background-color: rgb(70, 70, 70);
   text-align: center;
   margin: auto;
   margin-top: 1vh;
@@ -77,24 +77,36 @@ button:hover {
 	border-color: #00A651;
 }
 
+#beerTable {
+  width: 75%;
+  margin: auto;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  background-color: #4FB9ED;
+  color: white;
+}
+
 tr {
    height: 10vh;
 }
 
-#profile_picture {
-	width: 15vw;
+.table>tbody>tr>td {
+	border-top: 3px solid #ddd;
+}
+
+a {
+  color: rgb(209, 13, 33);
+  text-decoration: underline;
 }
 
 #screen_name {
-  font-family: Helvetica Neue;
+  font-family: Impact;
   font-size: 18px;
-  font-weight: bold;
-  color: firebrick;
+  color: #464646;
   vertical-align: middle;
   text-align: center;
   text-shadow: 1px 1px white;
-  background-color: #ffd900;
-  border-radius: 20px;
+  background-color: #EB9C20;
 }
 
 #tweet_text {
@@ -104,35 +116,9 @@ tr {
 }
 
 #created_at {
-	color: #55ACEE;
+	color: #464646;
 	font-style: italic;
 	font-size: 14px;
 	font-weight: 800;
 
-}
-
-.animate-enter, 
-.animate-leave
-{ 
-    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    position: relative;
-    display: block;
-} 
-
-.animate-enter.animate-enter-active, 
-.animate-leave {
-    opacity: 1;
-    top: 0;
-    height: 30px;
-}
-
-.animate-leave.animate-leave-active,
-.animate-enter {
-    opacity: 0;
-    top: -50px;
-    height: 0px;
 }

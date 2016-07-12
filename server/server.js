@@ -34,7 +34,7 @@ app.get('/results', function (req, res) {
   .then(function(response) {
     lat = response.data.results[0].geometry.location.lat;
     lng = response.data.results[0].geometry.location.lng;
-    geocode = lat + ',' + lng + ',5mi';
+    geocode = lat + ',' + lng + ',10mi';
     
     T.get(searchTweets, {q: search, count: count, geocode: geocode}, function(error, data, response){
     })

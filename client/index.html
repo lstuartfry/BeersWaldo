@@ -24,12 +24,14 @@
         <input type="text" ng-model="keyword" placeholder="ex: Lagunitas IPA">
         <input type="text" ng-model="location" placeholder="ex: Los Angeles, CA">
         <button class="btn" type="submit"><img id="search" src="/assets/search_icon.png"></button>
-        <!-- <input type="text" ng-model="filter" placeholder="filter by #hashtag"> -->
     </form>
-    <table class="table table-striped">
-        <tr ng-animate="animate" ng-repeat="tweet in tweets | filter:filter">
-        <td id="profile_picture" ng-style="{backgroundImage: 'url({{tweet.user.profile_picture_url}})', backgroundSize: 'cover'}"></td>
-        <td id="screen_name">@{{tweet.user.screen_name}}</td>
+    <table class="table" id="beerTable">
+        <tr ng-repeat="tweet in tweets | filter:filter">
+        <td id="screen_name">
+        <a href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}">
+        	@{{tweet.user.screen_name}}
+        </a>
+        </td>
         <td id="tweet_text" ng-bind-html="tweet.text | linky">{{tweet.text}}</td>
         <td id="created_at">{{tweet.created_at.slice(0, 19)}}</td>
         </tr>
