@@ -35,7 +35,7 @@
 	<div id="logo"><img src="/assets/logo.png"></div>
 	<div id="title">BeersWaldo</div>
 </div>
-<div id="instructions">~ enter a <span style="font-weight:bold">BEER/BREWERY</span> and <span style="font-weight:bold">LOCATION</span> below to see who's tweeting! ~</div>
+<div id="instructions">~ enter a <strong>BEER/BREWERY</strong> and <strong>LOCATION</strong> below to see who's tweeting! ~</div>
 
 <div ng-controller="TwitterController">
     <form id="input-form" class="form-vertical" ng-submit="getTweets(keyword, location)" method="post">
@@ -45,16 +45,15 @@
     </form>
     <table class="table" id="beerTable">
         <tr ng-repeat="tweet in tweets | filter:filter">
-        <td id="screen_name">
-        <a href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}">
-        	@{{tweet.user.screen_name}}
-        </a>
-        </td>
-        <td id="tweet_text" ng-bind-html="tweet.text | linky">{{tweet.text}}</td>
-        <td id="created_at">{{tweet.created_at.slice(0, 19)}}</td>
+        	<td id="screen_name">
+        		<a href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}">
+        		@{{tweet.user.screen_name}}
+        		</a>
+        	</td>
+        	<td id="tweet_text" ng-bind-html="tweet.text | linky">{{tweet.text}}</td>
+        	<td id="created_at">{{tweet.created_at.slice(0, 19)}}</td>
         </tr>
     </table>
-</div>
 </div>
 </body>
 </html>
