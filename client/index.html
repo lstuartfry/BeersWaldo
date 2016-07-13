@@ -65,17 +65,30 @@
     
     </form>
 
-    <table class="table" id="beerTable">
-        <tr ng-repeat="tweet in tweets | filter:filter">
-        	<td id="screen_name">
-        		<a href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}">
-        		@{{tweet.user.screen_name}}
-        		</a>
-        	</td>
-        	<td id="tweet_text" ng-bind-html="tweet.text | linky">{{tweet.text}}</td>
-        	<td id="created_at">{{tweet.created_at.slice(0, 19)}}</td>
-        </tr>
-    </table>
-</div>
+    <ul class="nav nav-tabs">
+    	<li class="active"><a data-toggle="tab" href="#tweets">Tweets</a></li>
+    	<li><a data-toggle="tab" href="#info">Info</a></li>
+    </ul>
+
+    <div class="tab-content">
+    	
+    	<div id="tweets" class="tab-pane fade in active">
+				<table class="table" id="beerTable">
+					<tr ng-repeat="tweet in tweets | filter:filter">
+						<td id="screen_name">
+							<a href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}">
+							@{{tweet.user.screen_name}}
+							</a>
+						</td>
+						<td id="tweet_text" ng-bind-html="tweet.text | linky">{{tweet.text}}</td>
+						<td id="created_at">{{tweet.created_at.slice(0, 19)}}</td>
+					</tr>
+				</table>
+			</div>
+
+			<div id="info" class="tab-pane fade">
+			</div>
+
+		</div>
 </body>
 </html>

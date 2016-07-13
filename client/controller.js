@@ -2,7 +2,7 @@ var app = angular.module('beersWaldo', ['ngSanitize']);
 
 app.controller('beerController', function($scope, $http, Beers){
   $scope.getResults = function(beer, brewery, location) {
-    Beers.getAll(beer, brewery, location)
+    Beers.getTweets(beer, brewery, location)
     .then(function(data) {
       if(data.data.statuses.length === 0) {
         alert('sorry, no tweets found!  Please try another search!');
@@ -15,7 +15,7 @@ app.controller('beerController', function($scope, $http, Beers){
 
 app.factory('Beers', function($http) {
 
-  var getAll = function(beer, brewery, location) {
+  var getTweets = function(beer, brewery, location) {
     var keyword = beer + " " + brewery;
     return $http({
       url: '/results',
@@ -31,6 +31,6 @@ app.factory('Beers', function($http) {
   };
 
   return {
-    getAll: getAll
+    getTweets: getTweets
   }
 })
