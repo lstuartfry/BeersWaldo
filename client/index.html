@@ -35,14 +35,36 @@
 	<div id="logo"><img src="/assets/logo.png"></div>
 	<div id="title">BeersWaldo</div>
 </div>
-<div id="instructions">~ enter a <strong>BEER/BREWERY</strong> and <strong>LOCATION</strong> below to see who's tweeting! ~</div>
+<div id="instructions">
+	<p>~ enter a <strong>BEER, BREWERY</strong> and <strong>LOCATION</strong> below to see recent tweets and more info! ~</p>
+	<p style="font-size: 16px; font-style: italic"> (note, only results from the past 7-10 days will be returned)</p>
+</div>
 
-<div ng-controller="TwitterController">
-    <form id="input-form" class="form-vertical" ng-submit="getTweets(keyword, location)" method="post">
-        <input type="text" ng-model="keyword" placeholder="ex: Lagunitas IPA">
-        <input type="text" ng-model="location" placeholder="ex: Los Angeles, CA">
-        <button class="btn" type="submit"><img id="search" src="/assets/search_icon.png"></button>
+<div ng-controller="beerController">
+    
+    <form id="input-form" class="form-vertical" ng-submit="getResults(beer, brewery, location)" method="post">
+    	
+    	<div id="inputContainer">
+    	<div class="form-group">
+    		<label for="Beer">Beer :</label>
+    		<input type="text" class="form-control" ng-model="beer" placeholder="ex: Waldos' Special Ale">
+      </div>
+      
+      <div class="form-group">
+      	<label for="Brewery">Brewery :</label>
+      	<input type="text" class="form-control" ng-model="brewery" placeholder="ex: Lagunitas">
+      </div>
+
+      <div class="form-group">
+      	<label for="Location">Location :</label>
+      	<input type="text" class="form-control" ng-model="location" placeholder="ex: Los Angeles, CA">
+      </div>
+      </div>
+
+      <button class="btn" type="submit"><img id="search" src="/assets/search_icon.png"></button>
+    
     </form>
+
     <table class="table" id="beerTable">
         <tr ng-repeat="tweet in tweets | filter:filter">
         	<td id="screen_name">

@@ -40,8 +40,8 @@ body {
 }
 
 #search {
-  width: 120px;
-  height: 120px;
+  width: 240px;
+  height: 240px;
   margin-top: 2px;
   margin-left: -7px;
 }
@@ -52,7 +52,32 @@ body {
   margin: auto;
   margin-top: 1vh;
   width: 75%;
+  height: 285px;
   border-radius: 15px;
+}
+
+#inputContainer {
+	float: left;
+}
+
+.form-control {
+	height: 45px;
+	font-size: 25px;
+}
+
+.form-group {
+	margin-left: 10px;
+}
+
+label {
+  color: white;
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 20px;
+  float: left;
+  margin-left: 1%;
 }
 
 input {
@@ -63,11 +88,11 @@ input {
 
 button {
   background-color: #D20D21;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 30px !important;
   margin: auto;
-  margin-top: 15px;
+  margin-top: 25px;
   margin-bottom: 15px !important;
   margin-left: 15px;
 }
