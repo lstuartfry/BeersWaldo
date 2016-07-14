@@ -39,6 +39,10 @@ body {
   border-radius: 15px;
 }
 
+#breweryDB {
+	width: 20%;
+}
+
 #search {
   width: 240px;
   height: 240px;
@@ -100,6 +104,30 @@ button {
 button:hover {
 	background-color: white;
 	border-color: #00A651;
+}
+
+#pillsContainer {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  width: 20%;
+  height: 55px;
+  margin: auto;
+  margin-top: 1vh;
+  background-color: white;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.nav {
+  display: inline-block;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-pills>li.active>a {
+	background-color: #4FB9ED;
 }
 
 #beerTable {

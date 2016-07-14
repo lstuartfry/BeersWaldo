@@ -5,7 +5,7 @@ var routes = require('./routes');
 var Twit = require('twit');
 var sampleKeys = require('./sampleKeys.js');
 var axios = require('axios');
-app.use(express.static('./client'));
+app.use(express.static('./src'));
 
 var port = process.env.PORT || 3000;
 
@@ -19,18 +19,23 @@ var T = new Twit({
 })
 
 var googleKey = process.env.GOOGLE_API_KEY || apiKeys.keys.google_api_key;
+var breweryDbKey = process.env.BREWERY_DB_API_KEY || apiKeys.keys.breweryDb_api_key;
 
 var googleUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
-var urlKey = '&key=';
+var googleUrlKey = '&key=' + googleKey;
+
+var breweryDbUrl = 'http://api.brewerydb.com/v2/search?withBreweries=y&q=';
+var breweryDatabaseKey = '&key=' + breweryDbKey;
+
 var searchTweets = 'search/tweets';
 var count = 25;
-var search, location, lat, long, geocode;
+var search, location, lat, long, geocode, beer, brewery;
 
-app.get('/results', function (req, res) {
+app.get('/tweets', function (req, res) {
   search = req.headers.keyword;
   location = req.headers.location.split(' ').join('+');
   
-  axios.get(googleUrl + location + urlKey + googleKey)
+  axios.get(googleUrl + location + googleUrlKey)
   .then(function(response) {
     lat = response.data.results[0].geometry.location.lat;
     lng = response.data.results[0].geometry.location.lng;
@@ -39,8 +44,18 @@ app.get('/results', function (req, res) {
     T.get(searchTweets, {q: search, count: count, geocode: geocode}, function(error, data, response){
     })
     .then(function(data) {
-          res.send(data);
+          res.send(data.data);
     });
+  })
+});
+
+app.get('/info', function(req, res) {
+  beer = req.headers.beer.split(' ').join('+');
+  brewery = req.headers.brewery.split(' ').join('+');
+
+  axios.get(breweryDbUrl + beer + brewery + breweryDatabaseKey)
+  .then(function(data) {
+    res.send(data.data)
   })
 });
 
