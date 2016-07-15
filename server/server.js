@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
-var apiKeys = require('./apiKeys.js');
-var routes = require('./routes');
+// var apiKeys = require('./apiKeys.js');
+// var routes = require('./routes');
 var Twit = require('twit');
 var sampleKeys = require('./sampleKeys.js');
 var axios = require('axios');
