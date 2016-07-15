@@ -59,8 +59,8 @@
     <div class="tab-content">
     	
     	<div id="tweets" class="tab-pane fade in active">
-				<table class="table" id="beerTable">
-					<tr ng-repeat="tweet in tweets | filter:filter">
+				<table class="table" id="tweetTable">
+					<tr ng-repeat="tweet in tweets">
 						<td id="screen_name">
 							<a href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}">
 							@{{tweet.user.screen_name}}
@@ -73,6 +73,25 @@
 			</div>
 
 			<div id="info" class="tab-pane fade">
+        <table class="table" id="infoTable">
+          <tr ng-repeat="beer in beers">
+            <td style="background-color: #00A651">
+              <span id="beerImage"><img src="{{beer.labels.medium}}"></span>
+              <span id="beerName">{{beer.name}}</span>
+            </td>
+            <td id="beerDescription">
+              <span id="beerText">{{beer.description || "sorry, no description available"}}</span>
+              <span id="beerAbv">ABV: {{beer.abv}}%</span>
+              <span id="beerIbu">IBUs: {{beer.ibu}}</span>
+              <span id="beerAvailable">Availability: {{beer.available.name}}</span>
+            </td>
+            <td id="beerBrewery">
+              <span>{{beer.breweries[0].name}}</span>
+              <span id="beerBreweryImage"><img src="{{beer.breweries[0].images.medium}}"></span>
+              <span id="beerBreweryWebsite" href="{{beer.breweries[0].website">{{beer.breweries[0].website}}</span>
+            </td>
+          </tr>
+        </table>
 			</div>
 
 		</div>

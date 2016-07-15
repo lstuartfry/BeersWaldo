@@ -14,14 +14,14 @@ app.controller('beerController', function($scope, $http, Beers){
     Beers.getTweets(beer, brewery, location)
     .then(function(data) {
       if(data.statuses.length === 0) {
-        alert('sorry, no tweets found!  Please try another search!');
+        alert('sorry, no recent tweets found!  Check the INFO tab for more info!');
       }
       $scope.tweets = data.statuses;
     })
 
     Beers.getInfo(beer, brewery)
     .then(function(data) {
-
+      $scope.beers = data.data;
     })
   }
 });

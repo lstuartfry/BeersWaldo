@@ -130,7 +130,7 @@ button:hover {
 	background-color: #4FB9ED;
 }
 
-#beerTable {
+#tweetTable {
   width: 75%;
   margin: auto;
   margin-top: 3vh;
@@ -172,5 +172,69 @@ a {
 	font-style: italic;
 	font-size: 14px;
 	font-weight: 800;
+
+}
+
+/* INFO tab */
+
+#infoTable {
+  background-color: white;
+  margin-top: 3vh;
+}
+
+#beerImage > img {
+  width: 150px;
+}
+
+#beerName {
+  margin-top: 10px;
+  font-size: 20px;
+  display: block;
+  text-align: center;
+  font-family: impact;
+  color: white;
+}
+
+#beerDescription {
+  vertical-align: middle;
+}
+
+span#beerText {
+  font-size: 1.5em !important;
+}
+
+#beerAbv {
+  display: block;
+  font-size: 15px;
+  font-family: impact;
+  margin-top: 10px;
+}
+
+#beerIbu {
+  display: block;
+  font-size: 15px;
+  font-family: impact;
+}
+
+#beerAvailable {
+  display: block;
+  font-size: 15px;
+  font-family: impact;
+}
+
+#beerBrewery {
+  text-align: center;
+  font-size: 20px;
+  background-color: #D10D21;
+  color: white;
+  font-weight: bold;
+}
+
+#beerBreweryImage > img {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+#beerBreweryWebsite {
 
 }
