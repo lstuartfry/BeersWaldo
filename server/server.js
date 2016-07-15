@@ -11,15 +11,15 @@ var port = process.env.PORT || 3000;
 
 
 var T = new Twit({
-  consumer_key:         process.env.CONSUMER_KEY || apiKeys.keys.consumer_key,
-  consumer_secret:      process.env.CONSUMER_SECRET || apiKeys.keys.consumer_secret,
-  access_token:         process.env.ACCESS_TOKEN || apiKeys.keys.access_token,
-  access_token_secret:  process.env.ACCESS_TOKEN_SECRET || apiKeys.keys.access_token_secret,
+  consumer_key:         process.env.CONSUMER_KEY || sampleKeys.keys.consumer_key,
+  consumer_secret:      process.env.CONSUMER_SECRET || sampleKeys.keys.consumer_secret,
+  access_token:         process.env.ACCESS_TOKEN || sampleKeys.keys.access_token,
+  access_token_secret:  process.env.ACCESS_TOKEN_SECRET || sampleKeys.keys.access_token_secret,
   timeout_ms:           60*1000
 })
 
-var googleKey = process.env.GOOGLE_API_KEY || apiKeys.keys.google_api_key;
-var breweryDbKey = process.env.BREWERY_DB_API_KEY || apiKeys.keys.breweryDb_api_key;
+var googleKey = process.env.GOOGLE_API_KEY || sampleKeys.keys.google_api_key;
+var breweryDbKey = process.env.BREWERY_DB_API_KEY || sampleKeys.keys.breweryDb_api_key;
 
 var googleUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
 var googleUrlKey = '&key=' + googleKey;
