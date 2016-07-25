@@ -70,7 +70,7 @@
 				<table class="table" id="tweetTable">
 					<tr ng-repeat="tweet in tweets">
 						<td id="screen_name">
-							<a href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}">
+							<a target="_blank" href="https://twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id_str}}">
 							@{{tweet.user.screen_name}}
 							</a>
 						</td>
@@ -95,9 +95,9 @@
               <span id="beerAvailable">Availability: {{beer.available.name}}</span>
             </td>
             <td id="beerBrewery">
-              <a href="{{beer.breweries[0].website}}">{{beer.breweries[0].name}}</a>
-              <a href="{{beer.breweries[0].website}}" id="beerBreweryImage"><img src="{{beer.breweries[0].images.medium}}"></a>
-              <a href="{{beer.breweries[0].website}}" id="beerBreweryWebsite">{{beer.breweries[0].website}}</a>
+              <a target="_blank" href="{{beer.breweries[0].website}}">{{beer.breweries[0].name}}</a>
+              <a target="_blank" href="{{beer.breweries[0].website}}" id="beerBreweryImage"><img src="{{beer.breweries[0].images.medium}}"></a>
+              <a target="_blank" href="{{beer.breweries[0].website}}" id="beerBreweryWebsite">{{beer.breweries[0].website}}</a>
             </td>
           </tr>
         </table>
