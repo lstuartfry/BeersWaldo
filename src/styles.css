@@ -8,6 +8,7 @@ display: none;
 
 #headerContainer {
   display: flex;
+  width: 98%;
   margin: auto;
   margin-top: 3vh;
   background-color: #00A651;
@@ -55,22 +56,18 @@ display: none;
   width: 120px;
   height: 120px;
   margin-top: 2px;
-  margin-left: -7px;
+  margin-left: -9px;
 }
 
 #input-form {
   background-color: rgba(70,70,70,0.8);
-/*  text-align: center;
-*/  margin: auto;
+  margin: auto;
   margin-top: 1vh;
-/*  width: 75%;
-  height: 285px;*/
+  width: 98%;
   border-radius: 15px;
 }
 
 #inputContainer {
-/*	float: left;
-*/
   display: flex;
 }
 
@@ -109,7 +106,7 @@ button {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px !important;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 button:hover {
@@ -175,7 +172,7 @@ a {
 #tweet_text {
 	font-family: Helvetica Neue;
 	color: #292f33;
-	font-size: 1.5em;
+	font-size: 25px;
 }
 
 #created_at {
@@ -214,7 +211,7 @@ a {
 }
 
 span#beerText {
-  font-size: 1.5em !important;
+  font-size: 25px;
 }
 
 #beerStyle {
