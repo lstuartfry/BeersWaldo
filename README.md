@@ -1,6 +1,6 @@
 # BeerFinder
 
-beerswaldo.herokuapp.com
+**https://beerswaldo.herokuapp.com**
 
 Is there a beer you've been wanting to try, but have had a tough time finding where to try or purchase it?  BeersWaldo was created with this problem in mind.  Utilizing the Google Maps API, Twitter API and BreweryDB API, just type in the beer, brewery and location you want to search and BeersWaldo will find it!
 
