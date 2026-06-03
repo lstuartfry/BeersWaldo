@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/lstuartfry/BeersWaldo#readme",
   "dependencies": {
-    "axios": "^1.15.2",
+    "axios": "^1.16.0",
     "body-parser": "^1.20.5",
     "express": "^4.22.2",
     "oauth": "^0.9.14",
